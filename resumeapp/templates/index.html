@@ -1,0 +1,244 @@
+{% load static %}
+{% static "images" as baseUrl %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume</title>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <style>
+    .label{
+      width: 100px;
+      display: inline-block;
+      font-size:17px; 
+      margin: 4px;
+    }
+    #submit{
+      margin-top: 10px;
+      width: 10%;
+    }
+  </style>
+</head>
+
+<body>
+  {% for dest in dests %}
+  <div class="container">
+    <div class="profile">
+      <div class="profile_container">
+        
+        <div class="profile_profileImg">
+          <img src="{{dest.img.url}}" alt="shaif arfan">
+        </div>
+        
+        <div>
+          <h1 class="profile_name">
+            <span class="profile_name_firstName">{{dest.name}}</span>
+            <span class="profile_name_lastName">{{dest.last}}</span>
+          </h1>
+          <p class="profile_title">Software Developer</p>
+          <p class="description profile_description">
+            {{dest.desc}}
+          </p>
+          <a class="downloadBtn" href="{% static 'resumepdf/My resume 4.pdf ' %} " download="Resume.pdf">Download Resume</a>
+        </div>
+      </div>
+    </div>
+    <div class="group-1">
+      <div class="skills">
+        <h3 class="title">Expertise</h3>
+        <ul class="skills_list description">
+          <li>Python [Django Frame_work, Sqlite3 Database]</li>
+          <li>Java Programming</li>
+          <li>SQL DataBase</li>
+          <li>HTML CSS</li>
+          <li>JavaScript</li>
+          <li>C , C++ </li>
+        </ul>
+      </div>
+      <!-- <div class="ref">
+        <h3 class="title">Reference</h3>
+        <div class="ref_item">
+          <h4 class="ref_name">Rashid Chy</h4>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, neque?</p>
+        </div>
+        <div class="ref_item">
+          <h4 class="ref_name">Ayman Rahman</h4>
+          <p class="description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+        </div>
+      </div> -->
+
+      <div class="edu">
+        <h3 class="title">Education</h3>
+        <div class="edu_item">
+          <p class="item_preTitle">2019-2022</p>
+          <h4 class="item_title">Bchl Of Computer Application</h4>
+          <p class="item_subtitle">
+            Bangalore University
+          </p>
+        </div>
+        <div class="edu_item">
+          <p class="item_preTitle">2017-2019</p>
+          <h4 class="item_title">Pre-University</h4>
+          <p class="item_subtitle">
+            Bangalore University
+          </p>
+        </div>
+      </div>
+
+      <div class="certification">
+        <h3 class="title">certification</h3>
+        <div class="certification_item">
+          <div class="certification_item">
+            <!-- <p class="item_preTitle">2018</p> -->
+            <h4 class="item_title">C C++</h4>
+            <p class="description">
+              I have earned this certificate through a offline coaching which  sarva coaching institute 
+            </p>
+          </div>
+          <!-- <p class="item_preTitle">2018</p> -->
+          <h4 class="item_title">Python</h4>
+          <p class="description">
+            I have earned this certificate through solo learn application platform were SoloLearn is a series of free apps that allows users to learn a variety of programming languages and concepts through short lessons, code challenges, and quizzes.
+          </p>
+        </div>
+        <br>        
+        <div class="social">
+          <h3 class="title">Socials</h3>
+          <div class="social_items">
+            <a href="https://github.com/Aravindraprasad" target="_b" class="social_item">
+              <i data-feather="github"></i>
+              <span>/Github</span>
+            </a>
+            <a href="https://mobile.twitter.com/home" target="_blank" class="social_item">
+              <i data-feather="twitter"></i>
+              <span>/Twitter</span>
+            </a>
+            <a href="https://www.instagram.com/aravindra_prasad/" target="_blank" class="social_item">
+              <i data-feather="instagram"></i>
+              <span>/Instagram</span>
+            </a>
+          </div>
+        </div> 
+        <br>
+        <div class="group-3">
+          <div class="contact">
+            <h3 class="title">Contact</h3>
+            <div class="contact_info">
+              <p class="description">
+                Bangalore, Karnataka
+              </p>
+              <p class="description">
+                +91 9538065463
+              </p>
+              <p class="description">
+                aravindraprasad16@gmail.com
+              </p>
+            </div>
+          </div>
+          
+        </div>       
+      </div>
+    </div>
+    <div class="group-2">
+      <div class="exp">
+        <h3 class="title">Projects</h3>
+        <div class="exp_item">
+          <div class="exp_item">
+            <!-- <p class="item_preTitle">2019 - present</p> -->
+            <h4 class="item_title">Great Kart</h4>
+            <!-- <p class="item_subtitle">Frontend Developer</p> -->
+            <p class="description">
+              The title of the project is GREATKART It is a ecommerce platform to the consumer to buy the products by visiting the website in online. 
+              allows consumers to directly order from a seller over the Internet using a web browser and the ordered products will be delivered to the consumers given delivery address in this if the consumer is occurred with some problem then the consumer can give the feedback so that it can be solved. The project is built using python-Django framework and for interface HTML,CSS,JS is used and Sqlite3 is used as Database
+            </p>
+          </div>
+
+          <!-- <p class="item_preTitle">2021</p> -->
+          <h4 class="item_title">THE GENERICS</h4>
+          <p class="item_subtitle"></p>
+          <p class=" description">
+            The title of the project was‘THE GENERICS’ which was made on the concept of onlineshopping and this project is made up of HTML, CSS, JavaScript which sfront-end and PHP is used in back-end and MySQL is used for database purpose.
+          </p>
+        </div>
+        <div class="exp_item">
+          <!-- <p class="item_preTitle">2019 - present</p> -->
+          <h4 class="item_title">Personal Assistant</h4>
+          <!-- <p class="item_subtitle">Frontend Developer</p> -->
+          <p class="description">
+            Personal assistance project which acts like a google assistant which has a voice recognition features. Here you can ask your question by calling his name and it can give you the result by text and speech mode. This project was made of python .
+          </p>
+        </div>
+        
+      </div>
+      <div class="awards">
+        <h3 class="title">Personal Info</h3>
+        <div class="awards_item">
+          <!-- <p class="item_preTitle">2019</p> -->
+          <p class=" description"> 
+            Date Of Birth  : 16|08|2001 <br>
+            Language Known : English,Kannada,Tamil,Hindi <br>
+            Father Name    : Vishwanath <br>
+            Mother Name    : Jyothi <br>
+            Address        : #2 Babasahebapalya Kengeri
+                            Checkpost Mysore-road Bangalore-60
+                
+          </p>
+        </div>
+        <br>     
+
+      <div class="interest">
+        <h3 class="title">Interest</h3>
+        <div class="interest_items">
+          <div class="interest_item">
+            <i data-feather="music"></i>
+            <span>Music</span>
+          </div>
+          <div class="interest_item">
+            <i data-feather="book"></i>
+            <span>Books</span>
+          </div>
+          <div class="interest_item">
+            <i data-feather="map"></i>
+            <span>Travel</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+    
+    
+     
+  </div>
+  <center>
+    <hr>
+    <div class="social">
+      <h3 class="title">Review</h3>
+      <div class="social_items">
+        <form action="" method="POST">
+          {% csrf_token %}
+            <span class="label"> Name: </span> <input type="text" name="name" required></><br>
+        
+            <span class="label"> Email: </span> <input type="text" name="email" required><br>
+
+            <span class="label" > Desc: </span><span><input style="height:50px; margin-top: 10px;" type="text" name="desc" required></span><br>
+
+            <span class="label"  ></span><span><input  type="submit" id="submit" required></span><br>
+          </form>
+      </div>
+    </div>
+  </center>
+  
+  {% endfor %}
+  <script>
+    feather.replace()
+  </script>
+</body>
+
+</html>
